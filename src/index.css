@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@310&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body,
+#root
+{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+   font-family: 'Russo one','sans-serif'; 
+}
+
+*{
+    outline: none;
+}
+
+#root{
+    @apply flex flex-col items-center justify-center;
+    background: #5C4F4A;
+    background: linear-gradient(circle, rgba(106, 115, 148, 1) 10%, rgba(148, 143, 143, 1) 90%);
+}
+
+.Language{
+    @apply text-sm sm:text-lg text-right uppercase cursor-pointer;
+}
+
+.textarea{
+    @apply w-[100%] h-28 
+    max-[400px]:h-24 
+    max-[400px]:text-sm 
+    resize-none 
+    bg-[#151515] 
+    shadow-md 
+    shadow-white 
+    rounded-lg 
+    px-6
+    py-6 
+    font-righteous 
+    font-light 
+    leading-6;
+}

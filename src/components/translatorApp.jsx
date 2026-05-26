@@ -523,31 +523,17 @@ ${text}`;
     if (e.key === "Enter") { e.preventDefault(); handleTranslate(); }
   };
 
-const getSpeechLang = (code) => {
-  if (code === ROMAN_URDU_CODE) return "en-US";
-
-  const map = {
-    "en-GB": "en-GB",
-    "en-US": "en-US",
-    "ur-PK": "ur-PK",
-    "ar-SA": "ar-SA",
-    "fr-FR": "fr-FR",
-    "de-DE": "de-DE",
-    "es-ES": "es-ES",
-    "zh-CN": "zh-CN",
-    "hi-IN": "hi-IN",
-    "tr-TR": "tr-TR",
-    "fa-IR": "fa-IR",
-    "ru-RU": "ru-RU",
-    "ja-JP": "ja-JP",
-    "ko-KR": "ko-KR",
-    "pt-PT": "pt-PT",
-    "it-IT": "it-IT",
-    "pa-IN": "pa-IN",
+  const getSpeechLang = (code) => {
+    if (code === ROMAN_URDU_CODE) return "ur-PK";
+    const map = {
+      "en-GB": "en-GB", "en-US": "en-US", "ur-PK": "ur-PK", "ar-SA": "ar-SA",
+      "fr-FR": "fr-FR", "de-DE": "de-DE", "es-ES": "es-ES", "zh-CN": "zh-CN",
+      "hi-IN": "hi-IN", "tr-TR": "tr-TR", "fa-IR": "fa-IR", "ru-RU": "ru-RU",
+      "ja-JP": "ja-JP", "ko-KR": "ko-KR", "pt-PT": "pt-PT", "it-IT": "it-IT",
+      "pa-IN": "pa-IN",
+    };
+    return map[code] || code;
   };
-
-  return map[code] || code;
-};
 
   const startMediaRecorder = useCallback(async () => {
     try {
